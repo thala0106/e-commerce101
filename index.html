@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetailGenius - Shop the Smart Way</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('product-modal');
+      const modalContent = document.getElementById('modal-content');
+      const closeModal = document.getElementById('close-modal');
+
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const productDetails = card.innerHTML;
+          modalContent.innerHTML = productDetails;
+          modal.classList.remove('hidden');
+        });
+      });
+
+      closeModal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <a href="#" class="text-2xl font-bold text-blue-600">RetailGenius</a>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-gray-600 hover:text-blue-600">Home</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-600">Shop</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-600">Cart</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-blue-600">Contact</a></li>
+        </ul>
+        <a href="#" class="text-blue-600 hover:text-blue-800">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-16 text-center">
+      <h1 class="text-4xl font-bold mb-4">Welcome to RetailGenius</h1>
+      <p class="text-lg mb-8">Discover the best deals, shop globally, and enjoy seamless shopping!</p>
+      <a href="#shop" class="bg-white text-blue-600 font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-gray-200">Shop Now</a>
+    </div>
+  </header>
+
+  <!-- Product Section -->
+  <section id="shop" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8 text-center">Our Products</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <!-- Product Card -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 product-card cursor-pointer">
+          <img src="C:\Users\sanjeev\Desktop\Rolex-Source-bobswatches.webp" alt="Product" class="w-full">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">Rolex watch</h3>
+            <p class="text-gray-600">$500</p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full hover:bg-blue-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 product-card cursor-pointer">
+          <img src="C:\Users\sanjeev\Desktop\istockphoto-2160847440-612x612.jpg" alt="Product" class="w-full">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">earpots</h3>
+            <p class="text-gray-600">5$</p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full hover:bg-blue-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 product-card cursor-pointer">
+          <img src="C:\Users\sanjeev\Desktop\kerde-severin-NVD_32BBZFE-unsplash.jpg" alt="Product" class="w-full">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">PS 5</h3>
+            <p class="text-gray-600">$1200</p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full hover:bg-blue-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 product-card cursor-pointer">
+          <img src="C:\Users\sanjeev\Desktop\istockphoto-915655730-612x612.jpg" alt="Product" class="w-full">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">samsung LED TV 64 inches</h3>
+            <p class="text-gray-600">$2000</p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full hover:bg-blue-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 product-card cursor-pointer">
+          <img src="C:\Users\sanjeev\Desktop\istockphoto-1152694544-612x612.jpg" alt="Product" class="w-full">
+          <div class="p-4">
+            <h3 class="text-lg font-bold">butterfly mixer combo</h3>
+            <p class="text-gray-600">$150</p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded mt-4 w-full hover:bg-blue-700">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="product-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white rounded-lg shadow-lg w-3/4 max-w-2xl p-4 relative">
+      <button id="close-modal" class="absolute top-2 right-2 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center">&times;</button>
+      <div id="modal-content" class="p-4">
+        <!-- Product details will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p>© 2025 RetailGenius. All Rights Reserved.</p>
+      <ul class="flex justify-center space-x-4 mt-4">
+        <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
